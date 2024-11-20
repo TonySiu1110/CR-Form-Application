@@ -1,0 +1,28 @@
+/* General styles for the container */
+.Header-container {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f4f4f4; /* Light gray background */
+    
+  }
+  
+  /* Styling for the image */
+  .Header-container img {
+    width: 200px; /* Adjust the size of the logo */
+    height: auto;
+    margin-right: 16px; /* Space between the logo and text */
+  }
+  
+  /* Styling for the title text */
+  .Header-reasury-Board-Secretariat {
+    font-size: 1.2rem; /* Adjust size of the text */
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Dark text color for readability */
+    margin: 16px 0 120px; /* Add space above and below the title */
+    padding: 0 16px; /* Padding to avoid touching the edges */
+    
+    
+  }
+  

@@ -91,8 +91,10 @@ const Option1 = () => {
           name="ministry"
           value={ministry}
           onChange={handleChange}
+          required
         >
-          <option value="">Ministry A</option>
+          <option value="">Select...</option>
+          <option value="ministryB">Ministry A</option>
           <option value="ministryB">Ministry B</option>
           <option value="ministryC">Ministry C</option>
           <option value="moreOptions">More Options</option>
@@ -133,6 +135,7 @@ const Option1 = () => {
             value={telephone}
             onChange={handleChange}
             placeholder="Telephone Number"
+            pattern="[\d\s\-\+\(\)]{7,15}"
           />
         </div>
         <div className="form-group">

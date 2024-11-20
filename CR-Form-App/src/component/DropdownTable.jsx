@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Option1 from './Option1';
+import "./Styling/DropdownTableStyling.css";
 
 const ConsultationService = () => (
     <Option1 />
@@ -28,21 +29,36 @@ const ConsultationService = () => (
     };
   
     return (
-      <div>
+        <div className="dropdown-container">
         {/* Dropdown */}
-        <label htmlFor="dropdown">Select an Option:</label>
-        <select id="dropdown" onChange={handleDropdownChange} value={selectedOption}>
+        <label htmlFor="dropdown" className="dropdown-label">
+          Classification Service Required
+        </label>
+        <select
+          id="dropdown"
+          onChange={handleDropdownChange}
+          value={selectedOption}
+          className="dropdown-select"
+        >
           <option value="">Select...</option>
-          <option value="ConsultationService">Consultation Service: I would like to consult a JE Specialist on what I need to do</option>
-          <option value="ClassificationRequest">Submit a Classification Request</option>
-          <option value="PositionAdministration">Position Administration</option>
+          <option value="ConsultationService">
+            Consultation Service: I would like to consult a JE Specialist on what I
+            need to do
+          </option>
+          <option value="ClassificationRequest">
+            Submit a Classification Request
+          </option>
+          <option value="PositionAdministration">
+            Position Administration
+          </option>
         </select>
-  
+      
         {/* Conditionally render components based on the selected option */}
-        {selectedOption === 'ConsultationService' && <ConsultationService />}
-        {selectedOption === 'ClassificationRequest' && <ClassificationRequest />}
-        {selectedOption === 'PositionAdministration' && <PositionAdministration />}
+        {selectedOption === "ConsultationService" && <ConsultationService />}
+        {selectedOption === "ClassificationRequest" && <ClassificationRequest />}
+        {selectedOption === "PositionAdministration" && <PositionAdministration />}
       </div>
+      
     );
   };
 

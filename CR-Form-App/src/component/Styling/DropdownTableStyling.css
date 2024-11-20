@@ -1,0 +1,37 @@
+/* DropdownTableStyling.css */
+.dropdown-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dropdown-label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .dropdown-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  
+  
+  .dropdown-select option {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+
+  

@@ -9,6 +9,7 @@ import Testing from './component/Testing'
 import Testing2 from './component/Testing2'
 import Testing3 from './component/Testing3'
 import Head from './component/Head'
+import Testing4 from './component/Testing4'
 
 
 function App() {
@@ -36,8 +37,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <Head />
+      <Instruction />
       <DropdownTable />
+      <Testing4 />
+      
+      
     </>
   )
 }
