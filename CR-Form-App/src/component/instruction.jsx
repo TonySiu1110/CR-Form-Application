@@ -19,7 +19,7 @@ const Instruction = () => {
           If you would like to submit a classification request, select the ‘Submit a Classification Request’ option from the ‘Select a service’ drop-down menu below. Complete the mandatory fields wherever applicable and attach the required documents. Once completed, click on the ‘submit’ button and your JE Specialist will contact you within 3 business days to discuss your request. After submission, you will receive a confirmation email with a tracking number.
         </div>
       </div>
-
+        
       {/* Button section */}
       <div className="request-form-buttons">
         <button className="request-form-button">Ministry Partners</button>

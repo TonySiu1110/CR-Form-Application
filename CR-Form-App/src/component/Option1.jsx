@@ -3,7 +3,7 @@ import "./Styling/Option1Styling.css";
 
 
 const Option1 = () => {
-    
+  
   // State variables for form data
   const [ministry, setMinistry] = useState('');
   const [lastName, setLastName] = useState('');
@@ -16,7 +16,8 @@ const Option1 = () => {
   const [hrTelephone, setHrTelephone] = useState('');
   const [hrEmail, setHrEmail] = useState('');
   const [questions, setQuestions] = useState('');
-
+  
+  const maxChars = 500;
   // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,10 +26,15 @@ const Option1 = () => {
         setMinistry(value);
         break;
       case 'lastName':
-        setLastName(value);
+        if (/^[a-zA-Z]*$/.test(value)) {
+            setLastName(value);
+          }
         break;
       case 'firstName':
-        setFirstName(value);
+        if (/^[a-zA-Z]*$/.test(value)){
+            setFirstName(value);
+        }
+        
         break;
       case 'telephone':
         setTelephone(value);
@@ -40,10 +46,14 @@ const Option1 = () => {
         setHrContact(value);
         break;
       case 'hrLastName':
-        setHrLastName(value);
+        if (/^[a-zA-Z]*$/.test(value)){
+            setHrLastName(value);
+        }
         break;
       case 'hrFirstName':
+        if (/^[a-zA-Z]*$/.test(value)){
         setHrFirstName(value);
+        }
         break;
       case 'hrTelephone':
         setHrTelephone(value);
@@ -76,6 +86,7 @@ const Option1 = () => {
       hrEmail,
       questions,
     });
+
     // Optionally reset the form after submission
     // resetForm();
   };
@@ -84,7 +95,7 @@ const Option1 = () => {
     <form onSubmit={handleSubmit}>
       {/* Dropdown Table */}
       <div className='dropdown-container'>
-        <label htmlFor="dropdown" className="dropdown-label">Ministry</label>
+        <label htmlFor="dropdown" className="dropdown-label">Ministry<span className='star'>*</span></label>
         <select
           id="dropdown"
           className="dropdown-select"
@@ -104,23 +115,27 @@ const Option1 = () => {
       {/* First Row */}
       <div className="form-row">
         <div className="form-group">
-          <label>Last Name</label>
+          <label>Last Name<span className='star'>*</span></label>
           <input
             type="text"
             name="lastName"
             value={lastName}
             onChange={handleChange}
             placeholder="Last Name"
+            required
+            pattern="[a-zA-Z]*"
           />
         </div>
         <div className="form-group">
-          <label>First Name</label>
+          <label>First Name<span className='star'>*</span></label>
           <input
             type="text"
             name="firstName"
             value={firstName}
             onChange={handleChange}
             placeholder="First Name"
+            required
+            pattern="[a-zA-Z]*"
           />
         </div>
       </div>
@@ -128,7 +143,7 @@ const Option1 = () => {
       {/* Second Row */}
       <div className="form-row">
         <div className="form-group">
-          <label>Telephone Number</label>
+          <label>Telephone Number<span className='star'>*</span></label>
           <input
             type="tel"
             name="telephone"
@@ -136,16 +151,18 @@ const Option1 = () => {
             onChange={handleChange}
             placeholder="Telephone Number"
             pattern="[\d\s\-\+\(\)]{7,15}"
+            required
           />
         </div>
         <div className="form-group">
-          <label>Email Address</label>
+          <label>Email Address<span className='star'>*</span></label>
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
             placeholder="Email Address"
+            required
           />
         </div>
       </div>
@@ -157,11 +174,12 @@ const Option1 = () => {
 
       {/* Contact Advisor Fields */}
       <div className="form-group">
-        <label>HR Contact</label>
+        <label>HR Contact<span className='star'>*</span></label>
         <select
           name="hrContact"
           value={hrContact}
           onChange={handleChange}
+          required
         >
           <option value="">Select Contact...</option>
           <option value="hr1">HR Contact 1</option>
@@ -172,46 +190,52 @@ const Option1 = () => {
       {/* HR Contact Fields */}
       <div className="form-row">
         <div className="form-group">
-          <label>Last Name</label>
+          <label>Last Name<span className='star'>*</span></label>
           <input
             type="text"
             name="hrLastName"
             value={hrLastName}
             onChange={handleChange}
             placeholder="Last Name"
+            required
+            pattern="[a-zA-Z]*"
           />
         </div>
         <div className="form-group">
-          <label>First Name</label>
+          <label>First Name<span className='star'>*</span></label>
           <input
             type="text"
             name="hrFirstName"
             value={hrFirstName}
             onChange={handleChange}
             placeholder="First Name"
+            pattern="[a-zA-Z]*"
+            required
           />
         </div>
       </div>
 
       <div className="form-row">
         <div className="form-group">
-          <label>Telephone Number</label>
+          <label>Telephone Number<span className='star'>*</span></label>
           <input
             type="tel"
             name="hrTelephone"
             value={hrTelephone}
             onChange={handleChange}
             placeholder="Telephone Number"
+            required
           />
         </div>
         <div className="form-group">
-          <label>Email Address</label>
+          <label>Email Address<span className='star'>*</span></label>
           <input
             type="email"
             name="hrEmail"
             value={hrEmail}
             onChange={handleChange}
             placeholder="Email Address"
+            required
           />
         </div>
       </div>
@@ -227,7 +251,11 @@ const Option1 = () => {
           onChange={handleChange}
           placeholder="Enter your questions or issues here..."
           rows="4"
+          maxLength={maxChars}
         ></textarea>
+            <div className={`character-count ${questions.length > maxChars ? "over-limit" : ""}`}>
+                {questions.length}/{maxChars} characters
+            </div>
       </div>
 
       {/* Submit Button */}

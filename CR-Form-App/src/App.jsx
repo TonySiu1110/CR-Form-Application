@@ -10,6 +10,9 @@ import Testing2 from './component/Testing2'
 import Testing3 from './component/Testing3'
 import Head from './component/Head'
 import Testing4 from './component/Testing4'
+import Confirm from './component/Confirm.jsx'
+import Fail from './component/Fail.jsx'
+
 
 
 function App() {
@@ -40,6 +43,8 @@ function App() {
       <Instruction />
       <DropdownTable />
       <Testing4 />
+      <Confirm />
+      <Fail />
       
       
     </>
