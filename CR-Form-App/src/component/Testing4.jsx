@@ -19,6 +19,15 @@ const Testing4 = () => {
         Department_Number:"",
         directReports:"",
         numberOfPositions:"",
+        job_position:"",
+        is_it_excluded:"",
+        is_it_team:"",
+        effective_date:"",
+        indirectReports:"",
+        executive_development:"",
+        superpositiontitle:"",
+        superpositionnumber:"",
+
 
     });
 
@@ -122,7 +131,7 @@ const Testing4 = () => {
                 </div>
             </div>
 
-            {/* Third Row */}
+            {/* fourth Row */}
         <div className="form-row">
             <div className="form-group">
             <label htmlFor="Department-Description">Department Description</label>
@@ -148,7 +157,7 @@ const Testing4 = () => {
             </div>
         </div>
             
-            {/* Fourth Row */}
+            {/* Fifth Row */}
             <div className="form-row">
             
                 <div className="form-group">
@@ -175,6 +184,7 @@ const Testing4 = () => {
                 </div>
             </div>
 
+        {/* Sixth Row */}
         <div className="form-row">
             <div className="form-group">
             <label htmlFor="positionStatus">Position Status</label>
@@ -191,6 +201,7 @@ const Testing4 = () => {
             </div>
         </div>
 
+        {/* Seventh Row */}
         <div className='dropdown-container'>
                 <label htmlFor="dropdown" className="dropdown-label">Designated Bilingual Position</label>
                 <select
@@ -211,7 +222,7 @@ const Testing4 = () => {
 
       
 
-      {/* Fifth Row */}
+      {/* Eigth Row */}
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="numberOfPositions">Number of Positions</label>
@@ -225,19 +236,9 @@ const Testing4 = () => {
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="directReports">Number of Direct Reports</label>
-          <input
-            type="number"
-            id="directReports"
-            name="directReports"
-            value={formData.directReports}
-            onChange={handleChange}
-            min="0"
-          />
-        </div>
       </div>
-        
+      {/* Ninth Row */}
+
       <div className="form-row">
             <div className="form-group">
                     <label style={{ display: "block", marginBottom: "8px" }}>
@@ -277,7 +278,7 @@ const Testing4 = () => {
                     </div>
             </div>
         </div>
-      
+      {/* tenth Row */}
       <div className="form-row">
         
         <div className="form-group">
@@ -337,9 +338,180 @@ const Testing4 = () => {
         </div>
       </div>
           
-      
+        <div className="form-row">
+            <div className="form-group">
+                    <label htmlFor="job_position">Title of Position from previous classification, if different from the above title</label>
+                    <input
+                        type="text"
+                        id="job_position"
+                        name="job_position"
+                        value={formData.jobCode}
+                        onChange={handleChange}
+                        placeholder="Title of Position"
+                    />
+            </div>
+        </div>
 
-  
+        <div className="form-row">
+
+            <div className="form-group">
+                <label style={{ display: "block", marginBottom: "8px" }}>
+                    Is the position proposed as excluded (Executive, Management Compensation Plan, including Individual Contributor or OPSEUParallel)?
+                </label>
+                <div>
+                    <label>
+                    <input
+                        type="radio"
+                        name="is_it_excluded"
+                        value="Yes"
+                        checked={formData.is_it_excluded === "Yes"}
+                        onChange={handleChange}
+                    />
+                        Yes
+                    </label>
+                    <label style={{ marginLeft: "10px" }}>
+                    <input
+                        type="radio"
+                        name="is_it_excluded"
+                        value="No"
+                        checked={formData.is_it_excluded === "No"}
+                        onChange={handleChange}
+                    />
+                        No
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+        
+
+
+        <div className="form-row">
+            <div className="form-group">
+                <label htmlFor="directReports">Number of Direct Reports</label>
+                <input
+                    type="number"
+                    id="directReports"
+                    name="directReports"
+                    value={formData.directReports}
+                    onChange={handleChange}
+                    min="0"
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="indirectReports">Number of Indirect Reports</label>
+                <input
+                    type="number"
+                    id="indirectReports"
+                    name="indirectReports"
+                    value={formData.indirectReports}
+                    onChange={handleChange}
+                    min="0"
+                />
+            </div>
+
+
+        </div>
+
+        <div className="form-row">
+
+            <div className='dropdown-container'>
+                    <label htmlFor="dropdown" className="dropdown-label">Executive Development Committee  Approval for Organizational Structure</label>
+                    <select
+                    id="dropdown"
+                    className="dropdown-select"
+                    name="Executive_Development"
+                    value={formData.executive_development}
+                    onChange={handleChange}
+                    >
+                    <option value="">Executive Development Committee (EDC) Approval for Organizational Structure</option>
+                    <option value="">????</option>
+                    
+                    </select>
+            </div>
+
+        </div>
+
+        <div className="form-row">
+
+            <div className="form-group">
+                        <label htmlFor="positionTitle">Supervisor’s Position Title for the Requested Position</label>
+                        <input
+                            type="text"
+                            id="positionTitle"
+                            name="superpositiontitle"
+                            value={formData.superpositiontitle}
+                            onChange={handleChange}
+                            placeholder="Enter Supervisor’s Position title"
+                        />
+                    </div>
+
+        </div>
+
+        <div className="form-row">
+        <div className="form-group">
+                        <label htmlFor="jobCode">Supervisor’s Position Number</label>
+                        <input
+                            type="text"
+                            id="positionTitle"
+                            name="superpositionnumber"
+                            value={formData.jobCode}
+                            onChange={handleChange}
+                            placeholder="Enter Supervisor’s Position Number"
+                        />
+                    </div>
+        </div>
+
+        <div className="form-row">
+
+            <div className="form-group">
+                    <label style={{ display: "block", marginBottom: "8px" }}>
+                        Is this request for a team/Group Lead position?
+                    </label>
+                    <div>
+                        <label>
+                        <input
+                            type="radio"
+                            name="is_it_team"
+                            value="Yes"
+                            checked={formData.is_it_team === "Yes"}
+                            onChange={handleChange}
+                        />
+                            Yes
+                        </label>
+                        <label style={{ marginLeft: "10px" }}>
+                        <input
+                            type="radio"
+                            name="is_it_team"
+                            value="No"
+                            checked={formData.is_it_team === "No"}
+                            onChange={handleChange}
+                        />
+                            No
+                        </label>
+                    </div>
+            </div>
+
+        </div>
+
+        <div className="form-row">
+
+            <div className="form-group">
+                <label htmlFor="date">Date (MM/DD/YYYY)</label>
+                <input
+                    type="date"
+                    id="date"
+                    name="effective_date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    required 
+                />
+            </div>
+        </div>
+
+
           {/* Submit Button */}
           <button type="submit" className="submit-button">
             Submit
