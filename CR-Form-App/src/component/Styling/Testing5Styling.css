@@ -137,3 +137,13 @@ body {
   .footer-links a:hover {
     text-decoration: underline;
   }
+
+  .multi-button {
+    padding: 10px 20px; /* Adjust padding for button size */
+    font-size: 16px; /* Adjust text size */
+    cursor: pointer; /* Change cursor to pointer */
+    border: 1px solid #ccc; /* Optional: Add border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #007bff; /* Optional: Button background color */
+    color: white; /* Button text color */
+  }

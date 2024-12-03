@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import "./Styling/Option1Styling.css";
 
 const MultiPageForm = () => {
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 50,
+          behavior: "smooth", // Smooth scrolling animation
+        });
+      };
   // State to track the current page
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,11 +37,20 @@ const MultiPageForm = () => {
     executive_development:"",
     superpositiontitle:"",
     superpositionnumber:"",
+    new_positions_questions_responsibility:"",
+    new_positions_questions_skills:"",
+    updated_positions_reclassifications:"",
+    re_organization:"",
+    hr_contact:"",
+    hrLastName:"",
+    hrFirstName:"",
+    hrTelephone:"",
+    hrEmail:"",
 
 
 });
 
-
+    const maxChars = 500;
     // Handle input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -56,12 +72,14 @@ const MultiPageForm = () => {
     switch (currentPage) {
       case 1:
         return (
-          <>
+
             <form onSubmit={handleSubmit}>
+                <h2>Section 1 - Classification Service Requested</h2>
                 {/* Section 1 */}
-                <div className="form-group">
-                    <label htmlFor="classificationService">Classification Service Requested</label>
+                <div className='dropdown-container'>
+                    <label htmlFor="dropdown" className="dropdown-label" >Classification Service Requested</label>
                     <select
+                    className="dropdown-select"
                     id="classificationService"
                     name="classificationService"
                     value={formData.classificationService}
@@ -71,10 +89,11 @@ const MultiPageForm = () => {
                     {/* Add options dynamically if needed */}
                     </select>
                 </div>
+                
           </form>
 
 
-          </>
+    
         );
       case 2:
         return (
@@ -527,59 +546,231 @@ const MultiPageForm = () => {
       case 3:
         return (
           <>
-            <label>
-              Age:
-              <input
-                type="number"
-                name="age"
-                value={formData.age}
+            <h2>Section 3 - About the Job</h2>
+            <h3>For New Positions</h3>
+            <p>
+                Please outline below what questions and/or issues you have. This will help the JE specialist to prepare for your consultation. 
+                Please note, a classification request may be required following the consultation.
+            </p>
+            <div className="form-group">
+                <p>Please identify the key high level duties and responsibilities of the job</p>
+                <textarea
+                name="newpositionsquestions"
+                value={formData.new_positions_questions_responsibility}
                 onChange={handleChange}
-              />
-            </label>
+                placeholder="Enter your questions or issues here..."
+                rows="6"
+                maxLength={maxChars}
+                ></textarea>
+                    <div className={`character-count ${formData.new_positions_questions_responsibility.length > maxChars ? "over-limit" : ""}`}>
+                        {formData.new_positions_questions_responsibility.length}/{maxChars} characters
+                    </div>
+            </div>
+
+            <div className="form-group">
+                <p>Please Identify the skills and knowledge required for the job</p>
+                <textarea
+                name="newpositionsquestions"
+                value={formData.new_positions_questions_skills}
+                onChange={handleChange}
+                placeholder="Enter your questions or issues here..."
+                rows="6"
+                maxLength={maxChars}
+                ></textarea>
+                    <div className={`character-count ${formData.new_positions_questions_skills.length > maxChars ? "over-limit" : ""}`}>
+                        {formData.new_positions_questions_skills.length}/{maxChars} characters
+                    </div>
+            </div>
+            
+            <h3>For updated positions and reclassifications</h3>
+            <div className="form-group">
+                <p>Please clearly articulate the key changes in the job duties/job activities (4000 characters):</p>
+                <textarea
+                name="newpositionsquestions"
+                value={formData.updated_positions_reclassifications}
+                onChange={handleChange}
+                placeholder="Enter your questions or issues here..."
+                rows="6"
+                maxLength={maxChars}
+                ></textarea>
+                    <div className={`character-count ${formData.updated_positions_reclassifications.length > maxChars ? "over-limit" : ""}`}>
+                        {formData.updated_positions_reclassifications.length}/{maxChars} characters
+                    </div>
+            </div>
+
+            <h3>For re-organization/creating a new organization</h3>
+            <div className="form-group">
+                <p>Please provide a short description of the organizational or job change, outlining impact to current program, number of positions that may be impacted and the details, such as number of positions to be created, number of job descriptions to be updated, reclassified, and reporting relationship changes. (maximum 4000 characters) *</p>
+                <textarea
+                name="newpositionsquestions"
+                value={formData.re_organization}
+                onChange={handleChange}
+                placeholder="Enter your questions or issues here..."
+                rows="6"
+                maxLength={maxChars}
+                ></textarea>
+                    <div className={`character-count ${formData.re_organization.length > maxChars ? "over-limit" : ""}`}>
+                        {formData.re_organization.length}/{maxChars} characters
+                    </div>
+            </div>
+
+            
           </>
         );
       case 4:
         return (
           <>
-            <label>
-              Address:
-              <input
-                type="text"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-              />
-            </label>
+            <h2>Section 4 - HR Contact</h2>
+            <p>Please provide contact information for your Human Resources (HR) Advisor or Strategic Business Unit (SBU) Advisor.</p>
+        <div className="form-row">
+
+            <div className='dropdown-container'>
+                    <label htmlFor="dropdown" className="dropdown-label">Executive Development Committee  Approval for Organizational Structure</label>
+                    <select
+                    id="dropdown"
+                    className="dropdown-select"
+                    name="hr_contact"
+                    value={formData.hr_contact}
+                    onChange={handleChange}
+                    >
+                    <option value="">Executive Development Committee (EDC) Approval for Organizational Structure</option>
+                    <option value="">????</option>
+                    
+                    </select>
+            </div>
+        </div>
+        <div className="form-row">
+        <div className="form-group">
+          <label>Last Name<span className='star'>*</span></label>
+          <input
+            type="text"
+            name="hrLastName"
+            value={formData.hrLastName}
+            onChange={handleChange}
+            placeholder="Last Name"
+            required
+            pattern="[a-zA-Z]*"
+          />
+        </div>
+        <div className="form-group">
+          <label>First Name<span className='star'>*</span></label>
+          <input
+            type="text"
+            name="hrFirstName"
+            value={formData.hrFirstName}
+            onChange={handleChange}
+            placeholder="First Name"
+            pattern="[a-zA-Z]*"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
+          <label>Telephone Number<span className='star'>*</span></label>
+          <input
+            type="tel"
+            name="hrTelephone"
+            value={formData.hrTelephone}
+            onChange={handleChange}
+            placeholder="Telephone Number"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Email Address<span className='star'>*</span></label>
+          <input
+            type="email"
+            name="hrEmail"
+            value={formData.hrEmail}
+            onChange={handleChange}
+            placeholder="Email Address"
+            required
+          />
+        </div>
+      </div>
+
+
           </>
         );
+    case 5:
+        return(
+            <>
+            </>
+
+    );
+    case 6:
+        return(
+            <>
+            </>
+
+    );
       default:
         return <p>Invalid Page</p>;
     }
   };
 
+    const totalPages = 6;
+    // Calculate progress percentage
+    const progressPercentage = Math.round((currentPage / totalPages) * 100);
+     // Total pages
+  
   return (
     <div>
+        <div style={{ width: "100%", backgroundColor: "#f3f3f3", borderRadius: "5px", marginTop: "50px" }}>
+        <div
+          style={{
+            width: `${progressPercentage}%`,
+            backgroundColor: "#4caf50",
+            height: "10px",
+            borderRadius: "5px",
+          }}
+        ></div>
+      </div>
+      <p>{`Step ${currentPage} of ${totalPages}`}</p>
       <form>
         {/* Render the current page's fields */}
         {renderPage()}
         
         {/* Navigation Buttons */}
-        <div className="parent-muti-button">
-          {currentPage > 1 && (
-            <button className="muti-button" type="button" onClick={() => setCurrentPage(currentPage - 1)}>
-              Previous
-            </button>
-          )}
-          {currentPage < 4 && (
-            <button className="muti-button" type="button" onClick={() => setCurrentPage(currentPage + 1)}>
-              Next
-            </button>
-          )}
-          {currentPage === 4 && (
-            <button className="muti-button" type="submit" onClick={() => console.log(formData)}>
-              Submit
-            </button>
-          )}
+        <div className="parent-multi-button">
+            {currentPage > 1 && (
+                <button
+                className="multi-button"
+                type="button"
+                onClick={() => {
+                    setCurrentPage(currentPage - 1); // Go to the previous page
+                    scrollToTop(); // Scroll to the top of the page
+                }}
+                >
+                Previous
+                </button>
+            )}
+            {currentPage < 6 && (
+                <button
+                className="multi-button"
+                type="button"
+                onClick={() => {
+                    setCurrentPage(currentPage + 1); // Go to the next page
+                    scrollToTop(); // Scroll to the top of the page
+                }}
+                >
+                Next
+                </button>
+            )}
+            {currentPage === 6 && (
+                <button
+                className="multi-button"
+                type="submit"
+                onClick={() => {
+                    console.log(formData); 
+                    scrollToTop(); 
+                }}
+                >
+                Submit
+                </button>
+            )}
         </div>
       </form>
     </div>

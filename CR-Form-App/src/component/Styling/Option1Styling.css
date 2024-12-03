@@ -4,6 +4,7 @@
     max-width: 800px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
+    
   }
   
   h2 {
@@ -100,7 +101,28 @@
     color: red;
   }
   
- 
+  .parent-multi-button {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Align buttons vertically in the middle */
+    gap: 30px; /* Add space between buttons */
+    margin-top: 30px; /* Optional: Add spacing above the button group */
+  }
+  
+  .multi-button {
+    padding: 10px 20px; /* Adjust padding for button size */
+    width: 25%;
+    font-size: 16px; /* Adjust text size */
+    cursor: pointer; /* Change cursor to pointer */
+    border: 1px solid #ccc; /* Optional: Add border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #007bff; /* Optional: Button background color */
+    color: white; /* Button text color */
+  }
+  
+  .multi-button:hover {
+    background-color: #0056b3; /* Optional: Add hover effect */
+  }
   
 
   
