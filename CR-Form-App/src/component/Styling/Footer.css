@@ -1,0 +1,59 @@
+/* General Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Brand Section */
+  .footer-brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .footer-brand p {
+    font-size: 0.875rem;
+    margin: 5px 0 0;
+  }
+  
+  /* Navigation Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .footer-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social Media Icons */
+  .footer-socials a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  
+  .footer-socials a:hover {
+    color: #1da1f2; /* Adjust to match the brand color of the social platform */
+  }
+  

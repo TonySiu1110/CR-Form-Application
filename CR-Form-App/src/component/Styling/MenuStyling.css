@@ -1,0 +1,24 @@
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Optional: Add spacing between the buttons */
+    margin-bottom: 20px;
+}
+
+.CR-button {
+    display: flex;
+    flex-direction: column; /* Optional: Stack content (image and text) inside the button */
+    align-items: center;
+    text-align: center;
+    padding: 10px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.CR-button img {
+    width: 100px; /* Adjust image size */
+    height: 100px; /* Keep proportions */
+    margin-bottom: 5px; /* Space between image and text */
+    margin-left: 10px;
+}

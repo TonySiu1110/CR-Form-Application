@@ -1,35 +1,39 @@
 import React, { useState } from "react";
 import "./Styling/Option1Styling.css";
 
-const Testing4 = () => {
-    // State to manage form data
-    const [formData, setFormData] = useState({
-        classificationService: "",
-        positionNumber: "",
-        ministry: "",
-        division: "",
-        branch: "",
-        positionTitle: "",
-        jobCode: "",
-        securityScreening: "",
-        Bilingual:"",
-        licensingQualifications:"",
-        Prior:"",
-        Department_Description:"",
-        Department_Number:"",
-        directReports:"",
-        numberOfPositions:"",
-        job_position:"",
-        is_it_excluded:"",
-        is_it_team:"",
-        effective_date:"",
-        indirectReports:"",
-        executive_development:"",
-        superpositiontitle:"",
-        superpositionnumber:"",
+const MultiPageForm = () => {
+  // State to track the current page
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // State to track form data
+  const [formData, setFormData] = useState({
+    classificationService: "",
+    positionNumber: "",
+    ministry: "",
+    division: "",
+    branch: "",
+    positionTitle: "",
+    jobCode: "",
+    securityScreening: "",
+    Bilingual:"",
+    licensingQualifications:"",
+    Prior:"",
+    Department_Description:"",
+    Department_Number:"",
+    directReports:"",
+    numberOfPositions:"",
+    job_position:"",
+    is_it_excluded:"",
+    is_it_team:"",
+    effective_date:"",
+    indirectReports:"",
+    executive_development:"",
+    superpositiontitle:"",
+    superpositionnumber:"",
 
 
-    });
+});
+
 
     // Handle input changes
     const handleChange = (e) => {
@@ -46,27 +50,35 @@ const Testing4 = () => {
         console.log("Form submitted:", formData);
         // Add further submission logic here
     };
-
-  
-    return (
     
-      <>
-        <h2>Section 1 - Classification Service Requested</h2>
-        <form onSubmit={handleSubmit}>
-          {/* Section 1 */}
-          <div className="form-group">
-            <label htmlFor="classificationService">Classification Service Requested</label>
-            <select
-              id="classificationService"
-              name="classificationService"
-              value={formData.classificationService}
-              onChange={handleChange}
-            >
-              <option value="">Select Classification Service</option>
-              {/* Add options dynamically if needed */}
-            </select>
-          </div>
-  
+  // Page Components
+  const renderPage = () => {
+    switch (currentPage) {
+      case 1:
+        return (
+          <>
+            <form onSubmit={handleSubmit}>
+                {/* Section 1 */}
+                <div className="form-group">
+                    <label htmlFor="classificationService">Classification Service Requested</label>
+                    <select
+                    id="classificationService"
+                    name="classificationService"
+                    value={formData.classificationService}
+                    onChange={handleChange}
+                    >
+                    <option value="">Select Classification Service</option>
+                    {/* Add options dynamically if needed */}
+                    </select>
+                </div>
+          </form>
+
+
+          </>
+        );
+      case 2:
+        return (
+          <>
             <h2>Section 2 - Position Information</h2>
             {/* Section 2 */}
             
@@ -510,15 +522,68 @@ const Testing4 = () => {
                 />
             </div>
         </div>
-
-
-          {/* Submit Button */}
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </form>
-      </>
-    );
+          </>
+        );
+      case 3:
+        return (
+          <>
+            <label>
+              Age:
+              <input
+                type="number"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+              />
+            </label>
+          </>
+        );
+      case 4:
+        return (
+          <>
+            <label>
+              Address:
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+              />
+            </label>
+          </>
+        );
+      default:
+        return <p>Invalid Page</p>;
+    }
   };
 
-export default Testing4
+  return (
+    <div>
+      <form>
+        {/* Render the current page's fields */}
+        {renderPage()}
+        
+        {/* Navigation Buttons */}
+        <div className="parent-muti-button">
+          {currentPage > 1 && (
+            <button className="muti-button" type="button" onClick={() => setCurrentPage(currentPage - 1)}>
+              Previous
+            </button>
+          )}
+          {currentPage < 4 && (
+            <button className="muti-button" type="button" onClick={() => setCurrentPage(currentPage + 1)}>
+              Next
+            </button>
+          )}
+          {currentPage === 4 && (
+            <button className="muti-button" type="submit" onClick={() => console.log(formData)}>
+              Submit
+            </button>
+          )}
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default MultiPageForm;

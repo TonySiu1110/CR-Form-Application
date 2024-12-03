@@ -1,0 +1,33 @@
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; /* For Link styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover and Focus Effects */
+  .btn:hover,
+  .btn:focus {
+    background-color: #0056b3; /* Darker blue */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Active Effect */
+  .btn:active {
+    background-color: #004494; /* Even darker blue */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(0.98); /* Button press effect */
+  }
+  

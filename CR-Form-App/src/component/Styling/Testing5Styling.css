@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navbar */
+.navbar1 {
+  /* background: white; */
+  
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #1a73e8;
+}
+
+.faq-button {
+  padding: 8px 16px;
+  border: 2px solid #1a73e8;
+  border-radius: 5px;
+  color: #1a73e8;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.faq-button:hover {
+  background-color: #1a73e8;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 15px;
+  background-color: #f0f4f8;
+}
+
+.hero-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #155ab6;
+}
+
+.hero-image {
+  margin-top: 30px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-links li {
+    display: inline;
+  }
+  
+  .footer-links a {
+    color: #fff; /* Light blue */
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }

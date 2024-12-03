@@ -3,7 +3,8 @@
     display: flex;
     align-items: center;
     padding: 16px;
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f4f4f4; 
+    /* Light gray background */
     
   }
   
@@ -20,7 +21,7 @@
     font-weight: bold;
     text-align: center;
     color: #333; /* Dark text color for readability */
-    margin: 16px 0 120px; /* Add space above and below the title */
+    margin: 16px 0 50px; /* Add space above and below the title */
     padding: 0 16px; /* Padding to avoid touching the edges */
     
     

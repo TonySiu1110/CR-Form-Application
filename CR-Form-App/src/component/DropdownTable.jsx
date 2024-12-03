@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import Option1 from './Option1';
 import "./Styling/DropdownTableStyling.css";
+import Head from './Head';
+import Navbar from './Navbar';
+import Testing4 from './Testing4';
+import Testing5 from './Testing5';
+
 
 const ConsultationService = () => (
     <Option1 />
   );
   
   const ClassificationRequest = () => (
-    <div>
-      <h3>Submit a Classification Request</h3>
-      <p>Please submit a classification request by following the procedure outlined here.</p>
-    </div>
+    // <div>
+    //   <h3>Submit a Classification Request</h3>
+    //   <p>Please submit a classification request by following the procedure outlined here.</p>
+    // </div>
+    <Testing5 />
   );
   
   const PositionAdministration = () => (
@@ -29,6 +35,8 @@ const ConsultationService = () => (
     };
   
     return (
+      <>
+        <Head />
         <div className="dropdown-container">
         {/* Dropdown */}
         <label htmlFor="dropdown" className="dropdown-label">
@@ -58,7 +66,7 @@ const ConsultationService = () => (
         {selectedOption === "ClassificationRequest" && <ClassificationRequest />}
         {selectedOption === "PositionAdministration" && <PositionAdministration />}
       </div>
-      
+      </>
     );
   };
 
