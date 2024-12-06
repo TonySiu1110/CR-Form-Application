@@ -5,6 +5,7 @@ import Head from './Head';
 import Navbar from './Navbar';
 import Testing4 from './Testing4';
 import Testing5 from './Testing5';
+import Footer1 from './Footer1';
 
 
 const ConsultationService = () => (
@@ -37,6 +38,7 @@ const ConsultationService = () => (
     return (
       <>
         <Head />
+        <Navbar />
         <div className="dropdown-container">
         {/* Dropdown */}
         <label htmlFor="dropdown" className="dropdown-label">
@@ -66,6 +68,7 @@ const ConsultationService = () => (
         {selectedOption === "ClassificationRequest" && <ClassificationRequest />}
         {selectedOption === "PositionAdministration" && <PositionAdministration />}
       </div>
+      
       </>
     );
   };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Styling/Option1Styling.css";
+import Testing6 from "./Testing6";
 
 const MultiPageForm = () => {
 
@@ -46,6 +47,9 @@ const MultiPageForm = () => {
     hrFirstName:"",
     hrTelephone:"",
     hrEmail:"",
+    managerLastName:"",
+    managerFirstName:"",
+    managerTelephone:"",
 
 
 });
@@ -86,6 +90,8 @@ const MultiPageForm = () => {
                     onChange={handleChange}
                     >
                     <option value="">Select Classification Service</option>
+                    <option value="Classify_New_Position">Classify New Position</option>
+                    <option value="reorganization_a_new_organization">Re-Organization/Create a new organization</option>
                     {/* Add options dynamically if needed */}
                     </select>
                 </div>
@@ -555,11 +561,11 @@ const MultiPageForm = () => {
             <div className="form-group">
                 <p>Please identify the key high level duties and responsibilities of the job</p>
                 <textarea
-                name="newpositionsquestions"
+                name="new_positions_questions_responsibility"
                 value={formData.new_positions_questions_responsibility}
                 onChange={handleChange}
                 placeholder="Enter your questions or issues here..."
-                rows="6"
+                rows="5"
                 maxLength={maxChars}
                 ></textarea>
                     <div className={`character-count ${formData.new_positions_questions_responsibility.length > maxChars ? "over-limit" : ""}`}>
@@ -584,7 +590,7 @@ const MultiPageForm = () => {
             
             <h3>For updated positions and reclassifications</h3>
             <div className="form-group">
-                <p>Please clearly articulate the key changes in the job duties/job activities (4000 characters):</p>
+                <p>Please clearly articulate the key changes in the job duties/job activities</p>
                 <textarea
                 name="newpositionsquestions"
                 value={formData.updated_positions_reclassifications}
@@ -600,7 +606,7 @@ const MultiPageForm = () => {
 
             <h3>For re-organization/creating a new organization</h3>
             <div className="form-group">
-                <p>Please provide a short description of the organizational or job change, outlining impact to current program, number of positions that may be impacted and the details, such as number of positions to be created, number of job descriptions to be updated, reclassified, and reporting relationship changes. (maximum 4000 characters) *</p>
+                <p>Please provide a short description of the organizational or job change, outlining impact to current program, number of positions that may be impacted and the details, such as number of positions to be created, number of job descriptions to be updated, reclassified, and reporting relationship changes.</p>
                 <textarea
                 name="newpositionsquestions"
                 value={formData.re_organization}
@@ -697,12 +703,75 @@ const MultiPageForm = () => {
     case 5:
         return(
             <>
+                <h2>Section 5 - Authorization</h2>
+                <p>I authorize the classification request and confirm there is associated funding.</p>
+                <h3>Manager</h3>
+                <div className="form-row">
+                    <div className="form-group">
+                    <label>Last Name<span className='star'>*</span></label>
+                    <input
+                        type="text"
+                        name="managerLastName"
+                        value={formData.managerLastName}
+                        onChange={handleChange}
+                        placeholder="Last Name"
+                        required
+                        pattern="[a-zA-Z]*"
+                    />
+                    </div>
+                    <div className="form-group">
+                    <label>First Name<span className='star'>*</span></label>
+                    <input
+                        type="text"
+                        name="managerFirstName"
+                        value={formData.managerFirstName}
+                        onChange={handleChange}
+                        placeholder="First Name"
+                        pattern="[a-zA-Z]*"
+                        required
+                    />
+                    </div>
+                </div>
+                <div className="form-row">
+                        <div className="form-group">
+                        <label>Telephone Number<span className='star'>*</span></label>
+                        <input
+                            type="tel"
+                            name="managerTelephone"
+                            value={formData.managerTelephone}
+                            onChange={handleChange}
+                            placeholder="Telephone Number"
+                            required
+                        />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="date">Date Of Submission (MM/DD/YYYY)</label>
+                            <input
+                                type="date"
+                                id="date"
+                                name="effective_date"
+                                value={formData.dateofsubmission}
+                                onChange={handleChange}
+                                required
+                                min={new Date().toISOString().split('T')[0]} // Today's date as min
+                                max={new Date().toISOString().split('T')[0]} // Today's date as max
+                            />
+                        </div>
+
+                </div>
+
             </>
 
     );
     case 6:
         return(
             <>
+                <h2>Section 6 - Supporting Documents</h2>
+                <p>Attach supporting documents <span className='star'>*</span></p>
+                <p>Organizational chart: it is mandatory to attach a complete organizational chart (with position numbers, job titles, and existing job classification levels), see sample organizational chart for reference.</p>
+                <p>Complete organizational chart is mandatory, with department number/s, position number/s and the classification levels. Insufficient information will delay the processing of the request.</p>
+                <Testing6></Testing6>
+                
             </>
 
     );

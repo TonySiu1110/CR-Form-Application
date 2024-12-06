@@ -63,6 +63,8 @@ const Testing4 = () => {
               onChange={handleChange}
             >
               <option value="">Select Classification Service</option>
+              <option value="Classify_New_Position">Classify New Position</option>
+              <option value="reorganization_a_new_organization">Re-Organization/Create a new organization</option>
               {/* Add options dynamically if needed */}
             </select>
           </div>

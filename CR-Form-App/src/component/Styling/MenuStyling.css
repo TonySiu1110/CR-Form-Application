@@ -13,7 +13,7 @@
     text-align: center;
     padding: 10px; /* Add padding for spacing */
     border: 1px solid #ccc; /* Optional: Add border for visual clarity */
-    border-radius: 5px; /* Optional: Rounded corners */
+    border-radius: 10px; /* Optional: Rounded corners */
 }
 
 .CR-button img {
@@ -21,4 +21,9 @@
     height: 100px; /* Keep proportions */
     margin-bottom: 5px; /* Space between image and text */
     margin-left: 10px;
+}
+
+.CR-button:hover {
+    border: 3px solid rgb(166, 223, 241);
+    cursor: pointer; /* Pointer cursor on hover */
 }
