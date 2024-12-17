@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Testing4 from './Testing4';
 import Testing5 from './Testing5';
 import Footer1 from './Footer1';
+import Po from './PositionAdministration'
 
 
 const ConsultationService = () => (
@@ -22,8 +23,7 @@ const ConsultationService = () => (
   
   const PositionAdministration = () => (
     <div>
-      <h3>Position Administration</h3>
-      <p>Details about position administration will appear here.</p>
+    <Po />
     </div>
   );
   
