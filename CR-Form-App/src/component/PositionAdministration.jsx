@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Styling/Option1Styling.css";
-import Testing6 from "./Testing6";
+import Testing6 from "./Attachment";
 
 const PositionAdministration = () => {
   const scrollToTop = () => {

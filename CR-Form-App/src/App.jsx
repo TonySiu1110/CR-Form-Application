@@ -6,7 +6,6 @@ import Instruction from './component/instruction'
 import DropdownTable from './component/DropdownTable'
 import Option1 from './component/Option1'
 import Testing from './component/Testing.jsx'
-import Testing2 from './component/Testing2'
 import Testing3 from './component/Testing3'
 import Head from './component/Head'
 import Testing4 from './component/Testing4'
@@ -33,7 +32,6 @@ function App() {
         <Route path="/instruction" element={<Instruction />} />
         <Route path="/cr-form" element={<DropdownTable />} />
         <Route path="/option1" element={<Option1 />} />
-        <Route path="/testing2" element={<Testing2 />} />
         <Route path="/testing3" element={<Testing3 />} />
         <Route path="/head" element={<Head />} />
         <Route path="/testing4" element={<Testing4 />} />

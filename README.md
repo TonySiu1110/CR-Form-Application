@@ -12,3 +12,13 @@ CR Form issue:
 5)	Integrate with MSAL
 6)	Minor issues on verification  
 Update: 24/12/2024
+
+
+Notes:
+
+Testing 5.jsx is the main file of the second options for the CR form which contains most of the issues, thats why it is named to be Testing 5. Once all the error is completed, please change up the name. 
+
+Position Adminstration.jsx has basically finished but rendering page 2 has a minor error, please fix it
+
+
+
