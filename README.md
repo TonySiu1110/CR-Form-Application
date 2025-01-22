@@ -1,6 +1,6 @@
 # CR-Form-Application
 
-This is a comprehensive form designed to collect detailed user data for various purposes, such as registration, feedback, surveys, or application submissions. The form ensures a seamless user experience while gathering accurate and essential information required for effective data analysis, service improvement, or processing applications.r Data by 
+This is a comprehensive form designed to collect detailed user data for various purposes, such as registration, feedback, surveys, or application submissions. The form ensures a seamless user experience while gathering accurate and essential information required for effective data analysis, service improvement, or processing applications.
 
 # Key Features of the CR-Form-Application:
 
@@ -17,3 +17,12 @@ Accessibility: Designed to be accessible to all users, including those with disa
 Mobile and Cross-Platform Compatibility: Fully responsive, ensuring usability across desktops, tablets, and smartphones.
 
 Automated Workflow Integration: Can be integrated with backend systems or APIs to streamline workflows such as notifications, data storage, and real-time processing.
+
+# How to run it
+
+Clone the repository and make sure you have React.js enivronment setup ready. 
+Run `npm start`
+
+And enjoy it
+
+
